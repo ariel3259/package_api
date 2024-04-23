@@ -1,11 +1,5 @@
 from sqlalchemy.orm import create_session, Session
-from flask import current_app
 
-
-def get_db():
-    engine = current_app.config["ENGINE"]
+def get_db(engine):
     session: Session = create_session(engine)
-    try:
-        yield session
-    finally:
-        session.close()
+    return session

@@ -1,3 +1,2 @@
-from model import Base
-from model import PackageStatus
-from model import Packages
+from flaskr.db.model import Base, PackageStatus, Packages
+from flaskr.db.session import get_db
